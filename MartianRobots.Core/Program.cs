@@ -1,12 +1,20 @@
 ﻿using System;
 
-namespace MartianRobots.Core
+public class Program
 {
-    class Program
+    public static void Main()
     {
-        static void Main(string[] args)
+        try
         {
-            Console.WriteLine("Hello World!");
+            var robotProcess = new RobotProcess("input.txt");
+            foreach (var message in robotProcess.ProcessMartianRobots())
+            {
+                Console.WriteLine(message);
+            };
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"The program has failed with the error message: '{ex.Message}'");
         }
     }
 }
